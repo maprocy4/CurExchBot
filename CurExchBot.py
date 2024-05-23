@@ -17,9 +17,9 @@ def help(message: telebot.types.Message):
 @bot.message_handler(commands=["curs"])
 def view_curs(message: telebot.types.Message):
     text = "Доступные валюты:\n\
+RUB - Российский рубль;\n\
 USD - Доллар США;\n\
-EUR - Евро;\n\
-JPY - Японская йена."
+EUR - Евро."
     bot.reply_to(message, text)
 
 @bot.message_handler(content_types=['text'])
