@@ -29,6 +29,6 @@ class CurConverter():
             raise APIException(f"Не удалось обработать количество {amount}.")
         
         r = requests.get(f"https://min-api.cryptocompare.com/data/price?fsym={quote_ticker}&tsyms={base_ticker}")
-        total_base = json.loads(r.content)[curs[base]]
+        total_base = float(amount) * float(json.loads(r.content)[curs[base]])
 
         return total_base
